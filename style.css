@@ -1,0 +1,274 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #333;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    background: #8B0000;
+    padding: 15px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #FFD700;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Lobster', cursive;
+}
+
+.pedido {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    position: relative;
+    margin-right: 5px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 28px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 4px;
+    background: white;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+/* ===== ANIMAÇÃO DO "X" ===== */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(2px, 3px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(2px, -3px);
+}
+
+.menu a:hover {
+    color: #FFD700;
+}
+
+.btn-pedir {
+    background: #FFD700;
+    color: #8B0000;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===== BANNER ===== */
+.banner {
+    background: url('img/pizza.jpeg') center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    text-align: center;
+}
+
+.banner-content {
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.banner h2 {
+    font-size: 64px;          
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+    font-family: 'Lobster';
+}
+
+.btn {
+    background: #FFD700;
+    color: #8B0000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===== CARDÁPIO ===== */
+.cardapio {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.cardapio h2 {
+    color: #8B0000;
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+
+.cardapio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.cardapio-grid img {
+    max-width: 300px;
+    max-height: 200px;
+}
+
+.item {
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.item h3 {
+    color: #8B0000;
+    margin-top: 10px;
+}
+
+/* ===== SOBRE ===== */
+.sobre {
+    background: #FAEBD7;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.sobre h2 {
+    color: #8B0000;
+    margin-bottom: 20px;
+}
+
+.sobre-content {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.sobre-content img {
+    width: 300px;
+    border-radius: 8px;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    background: #8B0000;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+    text-align: left;
+}
+
+.footer-grid h3 {
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.copy {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .pedido {
+        display: block; /* garante que aparece no mobile */
+        font-size: 14px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: #8B0000;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .sobre-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-content img {
+        width: 100%;
+    }
+
+    .banner h2 {
+    font-size: 48px;
+    }
+}
